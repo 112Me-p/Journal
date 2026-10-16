@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00A0D6" />
+  <title>little by little. | 30-Day Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard" aria-label="little by little home">little<br>by little<span>.</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span> Dashboard</button>
+        <button class="nav-item" data-view="morning"><span class="nav-icon">☼</span> Morning Journal</button>
+        <button class="nav-item" data-view="evening"><span class="nav-icon">☾</span> Evening Reflection</button>
+        <button class="nav-item" data-view="calendar"><span class="nav-icon">▦</span> 30-Day Calendar</button>
+      </nav>
+      <div class="sidebar-cat">
+        <div class="cat-wrap cat-idle" id="sidebarCat" aria-label="แมวส้มขยับได้" role="img">
+          <svg viewBox="0 0 120 120" class="cat-svg" aria-hidden="true">
+            <path class="tail" d="M81 87 C111 91 109 62 95 66 C87 68 95 80 101 74"/>
+            <path class="body" d="M29 90 C23 73 29 53 43 48 C55 42 76 46 84 62 L88 92 Z"/>
+            <path class="ear" d="M31 46 L29 19 Q31 12 39 21 L50 32 Z"/><path class="ear" d="M65 31 L82 17 Q91 15 89 26 L85 48 Z"/>
+            <path class="head" d="M28 45 Q28 25 47 25 Q65 19 82 34 Q94 49 82 66 Q67 82 45 70 Q27 63 28 45Z"/>
+            <path class="stripe" d="M47 28 L48 38 M57 26 L59 35 M68 29 L70 37"/>
+            <ellipse class="eye" cx="45" cy="48" rx="5.5" ry="7"/><ellipse class="eye" cx="70" cy="48" rx="5.5" ry="7"/><circle class="shine" cx="47" cy="46" r="1.8"/><circle class="shine" cx="72" cy="46" r="1.8"/>
+            <path class="muzzle" d="M51 57 Q57 52 62 57 Q57 63 51 57Z"/><path class="whisker" d="M45 59 L29 56 M45 63 L31 66 M69 59 L85 56 M69 63 L83 67"/>
+            <path class="paw" d="M38 83 Q31 83 33 92 Q36 98 48 94 L52 88Z"/><path class="paw" d="M60 86 Q55 95 66 97 L79 94 Q82 88 74 84Z"/>
+            <path class="cheek" d="M35 58 Q40 55 43 59 M72 59 Q76 55 80 58"/>
+          </svg>
+          <span class="spark spark-one">✦</span><span class="spark spark-two">✧</span>
+        </div>
+        <p>Good things<br>take time ♡</p>
+      </div>
+      <div class="sidebar-bottom">YOUR SPACE TO REFLECT & GROW</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand">little by little<span>.</span></div>
+        <div class="topbar-note">a little space, just for you ♡</div>
+        <div class="account-area">
+          <span id="userLabel" class="user-label">My Journal</span>
+          <button id="loginBtn" class="google-btn"><span class="google-g">G</span> <span id="loginText">Sign in with Google</span></button>
+          <button id="logoutBtn" class="logout-btn hidden">ออกจากระบบ</button>
+        </div>
+      </header>
+
+      <section id="dashboardView" class="view active-view">
+        <div class="hero-row">
+          <div class="hero-copy">
+            <p class="eyebrow">YOUR 30-DAY JOURNEY</p>
+            <h1>A little better,<br>every day<span>.</span></h1>
+            <p class="hero-subtitle">พื้นที่เล็ก ๆ สำหรับทำความเข้าใจตัวเองในทุกวัน</p>
+            <div class="doodle-note">Small steps<br>Big changes ♡</div>
+          </div>
+          <div class="progress-card scallop yellow-card">
+            <div class="progress-heading"><span>YOUR 30-DAY JOURNEY</span><span class="sprout">✿</span></div>
+            <div class="day-number">DAY <strong id="currentDay">01</strong> <span>/ 30</span></div>
+            <div class="progress-line"><span id="progressFill"></span></div>
+            <div class="progress-foot"><span id="progressText">เริ่มต้นการเดินทางของคุณ</span><strong id="progressPercent">0%</strong></div>
+          </div>
+        </div>
+
+        <div class="session-cards">
+          <article class="session-card morning-card scallop">
+            <div class="session-illustration sun-doodle">☼</div>
+            <div class="session-content"><h2>MORNING<br>JOURNAL</h2><p>ตั้งเป้าหมายก่อนเริ่มวัน</p><button class="pill-button blue-button" data-view="morning">เริ่มเขียน <span>→</span></button></div>
+            <span class="hand-note">Good Morning! ♡</span>
+          </article>
+          <article class="session-card evening-card scallop">
+            <div class="session-illustration moon-doodle">☾</div>
+            <div class="session-content"><h2>EVENING<br>REFLECTION</h2><p>ทบทวนวันของคุณ</p><button class="pill-button red-button" data-view="evening">เริ่มสรุป <span>→</span></button></div>
+            <span class="hand-note">Better Tomorrow ♡</span>
+          </article>
+        </div>
+
+        <section class="calendar-panel scallop">
+          <div class="panel-heading"><h2>30-DAY CALENDAR</h2><div class="legend"><span><i class="dot today-dot"></i>วันนี้</span><span><i class="dot written-dot"></i>เขียนแล้ว</span><span><i class="dot empty-dot"></i>ยังไม่เขียน</span></div></div>
+          <div class="day-grid" id="dayGrid"></div>
+        </section>
+        <footer class="page-footer"><span>—</span> Your space to reflect and grow. <span>—</span></footer>
+      </section>
+
+      <section id="journalView" class="view journal-view">
+        <button class="back-link" data-view="dashboard">← กลับหน้า Dashboard</button>
+        <div class="journal-heading"><p class="eyebrow" id="journalEyebrow">DAY 01 / MORNING JOURNAL</p><h1 id="journalTitle">Good morning<span>.</span></h1><p id="journalIntro">ก่อนเริ่มวัน ลองใช้เวลาสักครู่เพื่อกลับมาอยู่กับตัวเอง</p></div>
+        <div class="journal-switch"><button id="morningTab" class="switch-tab selected" data-session="morning">☼ Morning Journal</button><button id="eveningTab" class="switch-tab" data-session="evening">☾ Evening Reflection</button></div>
+        <div class="question-progress"><span id="questionCounter">QUESTION 01 / 07</span><div class="mini-progress"><span id="questionFill"></span></div></div>
+        <form id="journalForm" class="question-list"></form>
+        <div class="journal-actions"><button id="prevQuestion" class="pill-button pale-button">← ก่อนหน้า</button><span id="saveStatus" class="save-status">บันทึกในอุปกรณ์นี้โดยอัตโนมัติ</span><button id="nextQuestion" class="pill-button blue-button">คำถามถัดไป →</button></div>
+        <div class="mascot-tip"><div class="tiny-cat cat-wrap cat-curious"><svg viewBox="0 0 120 120" class="cat-svg" aria-hidden="true"><path class="tail" d="M81 87 C111 91 109 62 95 66 C87 68 95 80 101 74"/><path class="body" d="M29 90 C23 73 29 53 43 48 C55 42 76 46 84 62 L88 92 Z"/><path class="ear" d="M31 46 L29 19 Q31 12 39 21 L50 32 Z"/><path class="ear" d="M65 31 L82 17 Q91 15 89 26 L85 48 Z"/><path class="head" d="M28 45 Q28 25 47 25 Q65 19 82 34 Q94 49 82 66 Q67 82 45 70 Q27 63 28 45Z"/><path class="stripe" d="M47 28 L48 38 M57 26 L59 35 M68 29 L70 37"/><ellipse class="eye" cx="45" cy="48" rx="5.5" ry="7"/><ellipse class="eye" cx="70" cy="48" rx="5.5" ry="7"/><circle class="shine" cx="47" cy="46" r="1.8"/><circle class="shine" cx="72" cy="46" r="1.8"/><path class="muzzle" d="M51 57 Q57 52 62 57 Q57 63 51 57Z"/><path class="whisker" d="M45 59 L29 56 M45 63 L31 66 M69 59 L85 56 M69 63 L83 67"/><path class="paw" d="M38 83 Q31 83 33 92 Q36 98 48 94 L52 88Z"/><path class="paw" d="M60 86 Q55 95 66 97 L79 94 Q82 88 74 84Z"/></svg></div><p id="mascotMessage">ค่อย ๆ เขียนก็ได้นะ เราอยู่ตรงนี้ ♡</p></div>
+      </section>
+
+      <section id="calendarView" class="view journal-view">
+        <button class="back-link" data-view="dashboard">← กลับหน้า Dashboard</button>
+        <div class="journal-heading"><p class="eyebrow">LOOK BACK, GENTLY</p><h1>Your 30 days<span>.</span></h1><p>ทุกวันที่คุณกลับมาเขียน คือความก้าวหน้าอีกก้าวหนึ่ง</p></div>
+        <div class="calendar-panel scallop"><div class="panel-heading"><h2>YOUR JOURNAL DAYS</h2></div><div class="day-grid large-grid" id="largeDayGrid"></div></div>
+        <div id="selectedDaySummary" class="selected-day-summary"></div>
+      </section>
+
+      <section id="loginNotice" class="notice hidden" role="status"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
